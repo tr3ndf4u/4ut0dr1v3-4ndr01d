@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.trendmobile.cineatlas"
+        id        = "com.trendmobile.autodrive"
         versionCode="10" 
         version   = "1.0.0">
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Cine Atlas Tucumán</name>
+    <name>Autodrive APP</name>
 
     <description>
-        Aplicación movil del Cine Atlas en Tucumán donde podrás consultar la cartelera actual, próximos estrenos, como así también tarifas y promociones vigentes. 
+        Aplicación movil de autodrive. 
     </description>
 
-    <author href="https://www.trendtech.com.ar/mobile/proyecto/1/cine-atlas.html" email="soporte@trendtech.com.ar">
+    <author href="https://www.trendtech.com.ar/mobile/proyecto/2/autodrive-app.html" email="soporte@trendtech.com.ar">
         Trendtech 
     </author>
 	
