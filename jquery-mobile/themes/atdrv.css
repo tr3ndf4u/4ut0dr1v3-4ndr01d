@@ -90,34 +90,26 @@
 }
 
 .ui-btn-up-a {
-	border: 1px solid #363636 /*{a-bup-border}*/;
-	background: #363636 /*{a-bup-background-color}*/;
-	font-weight: bold;
-	color: #ffffff /*{a-bup-color}*/;
-	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #444444 /*{a-bup-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #3b3b3b /*{a-bup-background-start}*/), to( #303030 /*{a-bup-background-end}*/)); /* Saf4 , Chrome */
-	background-image: -webkit-linear-gradient( #3b3b3b /*{a-bup-background-start}*/, #303030 /*{a-bup-background-end}*/); /* Chrome 10 , Saf5.1  */
-	background-image:    -moz-linear-gradient( #3b3b3b /*{a-bup-background-start}*/, #303030 /*{a-bup-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #3b3b3b /*{a-bup-background-start}*/, #303030 /*{a-bup-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #3b3b3b /*{a-bup-background-start}*/, #303030 /*{a-bup-background-end}*/); /* Opera 11.10  */
-	background-image:         linear-gradient( #3b3b3b /*{a-bup-background-start}*/, #303030 /*{a-bup-background-end}*/);
+	color: #ffffff /*{b-bup-color}*/;
+	text-shadow: 0 /*{b-bup-shadow-x}*/ 1px /*{b-bup-shadow-y}*/ 0 /*{b-bup-shadow-radius}*/ #444444 /*{b-bup-shadow-color}*/;
+	
+	background-color: #363636;
+	background-image:url('../../img/luz-boton.png');
+	background-repeat:no-repeat;
+	background-position:top center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8) inset, 0 0 8px rgba(0, 0, 0, 0.3) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .ui-btn-up-a a.ui-link-inherit {
 	color: #ffffff /*{a-bup-color}*/;
 }
 
 .ui-btn-hover-a {
-	border: 1px solid #3e3e3e /*{a-bhover-border}*/;
-	background: #3e3e3e /*{a-bhover-background-color}*/;
-	font-weight: bold;
-	color: #ffffff /*{a-bhover-color}*/;
-	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #444444 /*{a-bhover-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #444444 /*{a-bhover-background-start}*/), to( #373737 /*{a-bhover-background-end}*/)); /* Saf4 , Chrome */
-	background-image: -webkit-linear-gradient( #444444 /*{a-bhover-background-start}*/, #373737 /*{a-bhover-background-end}*/); /* Chrome 10 , Saf5.1  */
-	background-image:    -moz-linear-gradient( #444444 /*{a-bhover-background-start}*/, #373737 /*{a-bhover-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #444444 /*{a-bhover-background-start}*/, #373737 /*{a-bhover-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #444444 /*{a-bhover-background-start}*/, #373737 /*{a-bhover-background-end}*/); /* Opera 11.10  */
-	background-image:         linear-gradient( #444444 /*{a-bhover-background-start}*/, #373737 /*{a-bhover-background-end}*/);
+	background-color: #363636;
+	color:#fff;
+	background-image:url('../../img/luz-boton.png');
+	background-repeat:no-repeat;
+	background-position:top center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8) inset, 0 0 8px rgba(0, 0, 0, 0.3) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .ui-btn-hover-a a.ui-link-inherit {
 	color: #ffffff /*{a-bhover-color}*/;
@@ -246,10 +238,12 @@
 }
 
 .ui-btn-hover-b {
-	background: #e91219 /*{b-bhover-background-color}*/;
 	color: #ffffff /*{b-bhover-color}*/;
 	text-shadow: 0 /*{b-bhover-shadow-x}*/ 1px /*{b-bhover-shadow-y}*/ 0 /*{b-bhover-shadow-radius}*/ #444444 /*{b-bhover-shadow-color}*/;
 	background-color: #C7161A;
+	background-image:url('../../img/luz-boton.png');
+	background-repeat:no-repeat;
+	background-position:top center;
     box-shadow: 0 0 12px rgba(100, 0, 0, 0.8) inset, 0 0 8px rgba(0, 0, 0, 0.3) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .ui-btn-hover-b a.ui-link-inherit {
@@ -463,7 +457,7 @@ a.ui-link-inherit {
 
 .ui-btn-inner {
 	border-top: 1px solid 	#fff;
-	border-color: 			rgba(255,255,255,.3);
+	border-color: 			rgba(255,255,255,.4);
 }
 
 
