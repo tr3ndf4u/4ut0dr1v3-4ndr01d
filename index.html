@@ -19,7 +19,7 @@ $(function() {
 });
 
 function hideSplash() {
-  $.mobile.changePage("#home", "fade");
+  $.mobile.changePage("#home",{ transition: "fade"});
 }
 
 
@@ -28,14 +28,14 @@ function hideSplash() {
 <style type='text/css'>
    #splash {
    align: center;
-    background: #a90329;
-background: -moz-radial-gradient(center, ellipse cover,  #a90329 0%, #8f0222 25%, #6d0019 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a90329), color-stop(25%,#8f0222), color-stop(100%,#6d0019));
-background: -webkit-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#6d0019 100%);
-background: -o-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#6d0019 100%);
-background: -ms-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#6d0019 100%);
-background: radial-gradient(ellipse at center,  #a90329 0%,#8f0222 25%,#6d0019 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 );
+    background: #000000;
+background: -moz-radial-gradient(center, ellipse cover,  #a90329 0%, #8f0222 25%, #000000 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a90329), color-stop(25%,#8f0222), color-stop(100%,#000000));
+background: -webkit-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#000000 100%);
+background: -o-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#000000 100%);
+background: -ms-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#000000 100%);
+background: radial-gradient(ellipse at center,  #a90329 0%,#8f0222 25%,#000000 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#000000',GradientType=1 );
 
    
 }
