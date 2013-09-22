@@ -23,6 +23,8 @@
 	
 	<preference name="show-splash-screen-spinner" value="false" />
 	
+	<preference name="splash-screen-duration" value="20000" />
+	
 	<icon src="img/icon.png" />
 
 </widget>
