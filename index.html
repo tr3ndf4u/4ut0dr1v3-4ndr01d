@@ -1,81 +1,55 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Autodrive APP</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.01, user-scalable=0, minimum-scale=1.01, maximum-scale=1.0">
-<link href="jquery-mobile/themes/atdrv.css" rel="stylesheet" type="text/css">
-<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
-<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
-<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
-<script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?sensor=true">
-</script>
-<script>
-//<![CDATA[ 
-$(window).load(function(){
-$(function() {
-  setTimeout(hideSplash, 6000);
-});
+	<head>
+		<meta charset="utf-8">
+		<title>Autodrive APP</title>
+	
+    	<meta name="viewport" content="width=device-width, initial-scale=1.01, user-scalable=0, minimum-scale=1.01, maximum-scale=1.0">
 
-function hideSplash() {
-  $.mobile.changePage("#home",{ transition: "fade"});
-}
+		<link href="jquery-mobile/themes/atdrv.css" rel="stylesheet" type="text/css">
+		<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
 
+		<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+		<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+        
+		<script type="text/javascript">
+            document.addEventListener('deviceready', function() {
+                navigator.notification.alert('device ready'); 
+            });
+        </script>
+	</head>
 
-});//]]>  
-</script>
-<style type='text/css'>
-   #splash {
-   align: center;
-    background: #000000;
-background: -moz-radial-gradient(center, ellipse cover,  #a90329 0%, #8f0222 25%, #4D0112 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a90329), color-stop(25%,#8f0222), color-stop(100%,#4D0112));
-background: -webkit-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#4D0112 100%);
-background: -o-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#4D0112 100%);
-background: -ms-radial-gradient(center, ellipse cover,  #a90329 0%,#8f0222 25%,#4D0112 100%);
-background: radial-gradient(ellipse at center,  #a90329 0%,#8f0222 25%,#4D0112 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#4D0112',GradientType=1 );
-
-   
-}
-#splash img{ position:absolute; top:50%; left:50%; margin-left:-115px; margin-top:-90px;}
-  </style>
-</head>
-
-<body>
-<div data-role="page" data-theme="b" id="splash" style="text-align:center; position:relative"> 
-    <img style="width: 230px; height: 180px" src="img/logo.png" style="alignment-baseline:middle;"/>
-</div>
-<div data-role="page" id="home" data-theme="a">
-  <div data-role="content">
-  	<div style=" text-align:center">
-            <img style="width: 230px; height: 180px" src="img/logo.png">
-    </div>
-     <div style=" text-align:center">
-        <b>
-        	<br>
-            Viví en el centro de Tucumán los mejores estrenos.
-            <br>
-            <br>
-        </b>
-    </div>
-  	<a data-role="button" href="cartelera.html" data-theme="a" data-transition="slide">
-        CARTELERA
-    </a>
-    <a data-role="button" href="tarifas.html" data-theme="b" data-transition="slide">
-        TARIFAS Y PROMOS
-    </a>
-    <a data-role="button" href="estrenos.html" data-theme="b" data-transition="slide">
-        PRÓXIMOS ESTRENOS
-    </a>
-    <a data-role="button" href="comollegar.html" data-transition="slide">
-        COMO LLEGAR
-    </a>
-    <a data-role="button" href="contacto.html" data-transition="slide">
-        CONTÁCTENOS
-    </a>
-  </div>
-</div>
-</body>
+	<body>
+        <div data-role="page" id="home" data-theme="a">
+        	<div data-role="content">
+            	<div style=" text-align:center">
+                	<img style="width: 230px; height: 180px" src="img/logo.png">
+            	</div>
+             	<div style=" text-align:center">
+                	<b>
+                    	<br>
+                    	Viví en el centro de Tucumán los mejores estrenos.
+                    	<br>
+                    	<br>
+                	</b>
+            	</div>
+                <a data-role="button" href="cartelera.html" data-theme="a" data-transition="slide">
+                    CARTELERA
+                </a>
+                <a data-role="button" href="tarifas.html" data-theme="b" data-transition="slide">
+                    TARIFAS Y PROMOS
+                </a>
+                <a data-role="button" href="estrenos.html" data-theme="b" data-transition="slide">
+                    PRÓXIMOS ESTRENOS
+                </a>
+                <a data-role="button" href="comollegar.html" data-transition="slide">
+                    COMO LLEGAR
+                </a>
+                <a data-role="button" href="contacto.html" data-transition="slide">
+                    CONTÁCTENOS
+                </a>
+          	</div>
+    	</div>
+	</body>
 </html>
