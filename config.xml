@@ -23,7 +23,7 @@
 	
 	<preference name="show-splash-screen-spinner" value="false" />
 	
-	<preference name="splash-screen-duration" value="20000" />
+	<preference name="splash-screen-duration" value="6000" />
 	
 	<!-- Icons -->
 
