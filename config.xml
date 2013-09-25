@@ -27,7 +27,7 @@
 	
 	<!-- Icons -->
 
-	<icon src="icnos/android/icono.png" />
+	<icon src="icons/android/icono.png" />
 	
 	<!-- Splash Screens -->
 	<gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
