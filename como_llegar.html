@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Cine Atlas</title>
+<title>Autodrive</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 		
 		//..........
 		directionsDisplay = new google.maps.DirectionsRenderer();
-        var cine = new google.maps.LatLng(-26.828513,-65.199329);
+        var cine = new google.maps.LatLng(-34.603259,-58.507776);
         var mapOptions = {
           zoom:15,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -63,7 +63,7 @@
   	function calcRoute()
 	{
    		var start = new google.maps.LatLng(-26.838893,-65.226056);
-        var end = new google.maps.LatLng(-26.828513,-65.199329);
+        var end = new google.maps.LatLng(-34.603259,-58.507776);
         var request = {
        		origin:start,
             destination:end,
@@ -102,7 +102,7 @@
 	 
 	 	//++++++
 		var start = miubicacion2;
-		var end = new google.maps.LatLng(-26.828513,-65.199329);
+		var end = new google.maps.LatLng(-34.603259,-58.507776);
 		var request = {
 			origin:start,
 			destination:end,
@@ -130,30 +130,21 @@
   <div data-theme="a" data-role="header" id="ventanita">
         <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a">INICIO</a>
         <h4>
-            CINE ATLAS
+            <img src="img/logo-2.png" />
         </h4>
-        <div data-role="navbar" data-iconpos="top">
-            <ul>
-                <li>
-                    <a href="#" data-transition="none" data-theme="" data-icon="star"
-                    class="ui-btn-active ui-state-persist">
-                        Como llegar
-                    </a>
-                </li>
-                <li>
-                    <a href="contacto.html" data-transition="fade" data-theme="" data-icon="star">
-                        Contáctenos
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
     
 			<div data-role="content">
             	<div style=" text-align:center">
                     <b>
                         <br>
-                        Llegate a Monteagudo 250 en San Miguel de Tucumán y viví los mejores estrenos.
+                        <div style=" text-align:left; font-weight:normal;">
+                            <b>SHOWROOM Y SERVICIO TÉCNICO</b>
+                            <br /><br />			
+                            Avenida Fracisco Beiro 3888 Villa Devoto<br />
+                            Ciudad Autónoma de Buenos Aires<br />
+                            Argentina
+                        </div>
                         <br>
                         <br>
                     </b>
@@ -164,7 +155,7 @@
 			</div>
             <script>
 				var altura = $(window).height();
-				var alt = altura-270;
+				var alt = altura-300;
 				if(alt<120)
 				{
 					alt = 120;
