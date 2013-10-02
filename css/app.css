@@ -1,8 +1,1 @@
-html {
-    font-family: helvetica, sans-serif;
-}
-
-h1 {
-    font-weight: bold;
-    font-size: 2em;
-}
+.millave{ display: inline-block; width:66px; height:69px; background:url(../img/llave.png) top center no-repeat;}
