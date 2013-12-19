@@ -12,12 +12,13 @@
 
 		<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 		<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+        <script src="jquery-mobile/jqm.page.params.js" type="text/javascript"></script>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
         
 		<script type="text/javascript">
-            document.addEventListener('deviceready', function() {
+            /*document.addEventListener('deviceready', function() {
                 navigator.notification.alert('device ready'); 
-            });
+            });*/
         </script>
 	</head>
 
@@ -25,34 +26,31 @@
         <div data-role="page" id="home" data-theme="a">
         	<div data-role="content">
             	<div style=" text-align:center">
-                	<!--<img src="img/icono.png" style="display:inline-block;">-->
                 	<img style="width: 230px; height: 50px" src="img/logo.png">
             	</div>
-             	<br />
-                <br />
-                <div style="text-align:center;">
-                <a href="0km.html" class="milink millave" data-transition="slide">
+                <div style="text-align:center;" id="mimenu">         
+                <a href="error.html" class="milink millave" data-transition="slide">
                     0 km<br />
                 </a>
-                <a href="usados.html" class="milink miusado" data-transition="slide">
-                    usados<br />
+                <a href="error.html" class="milink miusado" data-transition="slide">
+                    Usados<br />
                 </a>
-                <a href="servicio_tecnico.html" class="milink miservicio" data-transition="slide">
-                    servicio técnico
+                <a href="error.html" class="milink mialerta" data-transition="slide">
+                    Oportunidades<br />
                 </a>
-                <a href="alerta.html" class="milink mialerta" data-transition="slide">
-                    alerta<br />
+                <a href="error.html" class="milink micallcenter" data-transition="slide">
+                    Repuestos
                 </a>
-                <a href="contacto.html" class="milink mimail" data-transition="slide">
-                    enviar email
+                <a href="error.html" class="milink2 miservicio" data-transition="slide">
+                    servicio<br />técnico
+                </a>
+                <a href="error.html" class="milink2 mimail" data-transition="slide">
+                    Enviar<br />Mensajes
                 </a>
                 <a href="tel:+541145021111" class="milink mitelefono" data-transition="slide">
                     llamar<br />
                 </a>
-                <a href="te_llamamos.html" class="milink micallcenter" data-transition="slide">
-                    te llamamos
-                </a>
-                <a href="como_llegar.html" class="milink mimaps" data-transition="slide">
+                <a href="error.html" class="milink mimaps" data-transition="slide">
                     como llegar<br />
                 </a>
                 </div>
