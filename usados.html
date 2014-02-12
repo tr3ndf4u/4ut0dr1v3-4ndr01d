@@ -21,18 +21,11 @@
 			  }
 			});*/
 	$( '#estrenos' ).live( 'pagebeforecreate',function(event){
-		if(localStorage.getItem("carga_usados")=="no")
-		{
-			localStorage.setItem("carga_usados","si");
-			alert(localStorage.getItem("carga_usados"));
-			alert('cargo los usados');
+		//if(localStorage.getItem("carga_usados")=="no")
+		//{
+			//localStorage.setItem("carga_usados","si");
 			$(function() {
 				$.getJSON('http://www.autodrive.com.ar/usados/panel/productos/mobile_usados_json.php', function(data) {
-					//var $foo = $('#foo');
-					//for(vari=0; i<data.length; i++) {
-					//	$foo.append('<div>'+data[i][title]+'</div>');
-					//}
-					alert(data);
 					var $lu = $('#listadousados');
 					for(var i=0;i<data.length;i++)
 					{
@@ -41,7 +34,7 @@
 					 $('#listadousados').listview('refresh');
 				});
 			});
-		}
+		//}
 	});
 </script>
   <div data-theme="a" data-role="header" id="ventanitausados">
