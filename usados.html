@@ -7,44 +7,53 @@
 
 <body>
 <div data-role="page" id="estrenos" data-theme="a">
-  <div data-theme="a" data-role="header" id="ventanita">
+<script type="text/javascript">
+		/*$( '#estrenos' ).live( 'pageinit',function(event){
+			  alert( 'ttThis page was just enhanced by jQuery Mobile!' );
+			  if(typeof window.yacargueusados == 'function')
+			  {
+				  alert('no cargo');
+			  }else
+			  {
+				  alert('cargo usados');
+				  var a = function yacargueusados()
+			  	  { return true;}
+			  }
+			});*/
+	$( '#estrenos' ).live( 'pagebeforecreate',function(event){
+		if(localStorage.getItem("carga_usados")=="no")
+		{
+			localStorage.setItem("carga_usados","si");
+			alert(localStorage.getItem("carga_usados"));
+			alert('cargo los usados');
+			$(function() {
+				$.getJSON('http://www.autodrive.com.ar/usados/panel/productos/mobile_usados_json.php', function(data) {
+					//var $foo = $('#foo');
+					//for(vari=0; i<data.length; i++) {
+					//	$foo.append('<div>'+data[i][title]+'</div>');
+					//}
+					alert(data);
+					var $lu = $('#listadousados');
+					for(var i=0;i<data.length;i++)
+					{
+						$lu.append('<li data-theme="a"><a href="usado1.html" data-transition="slide"><img src="'+data[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+data[i].titulo_corto+'</h3><p class="ui-li-desc">'+data[i].subtitulo+'</p></a></li>');
+					}
+					 $('#listadousados').listview('refresh');
+				});
+			});
+		}
+	});
+</script>
+  <div data-theme="a" data-role="header" id="ventanitausados">
         <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a">INICIO</a>
         <h4>
             <img src="img/logo-2.png" />
         </h4>
     </div>
   	<div data-role="content">
-        <ul data-role="listview" data-inset="true" data-split-theme="a">
+        <ul data-role="listview" data-inset="true" data-split-theme="a" id="listadousados">
             <li data-role="list-divider" role="heading" data-theme="b">
                 Usados Exclusivos
-            </li>
-            <li data-theme="a">
-            	<a href="usado1.html" data-transition="slide">
-                	<img src="img/blanco.jpg" height="120" width="110">
-                    <h3 class="ui-li-heading">Audi R8</h3>
-                    <p class="ui-li-desc">2011 V10</p>
-               	</a>
-            </li>
-            <li data-theme="a">
-            	<a href="estreno2.html" data-transition="slide">
-                	<img src="img/rojo.jpg" height="120" width="110">
-                    <h3 class="ui-li-heading">Jeep Wrangler</h3>
-                    <p class="ui-li-desc">2011 4p Atx</p>
-               	</a>
-            </li>
-            <li data-theme="a">
-            	<a href="estreno3.html" data-transition="slide">
-                	<img src="img/gris.jpg" height="120" width="110">
-                    <h3 class="ui-li-heading">Porsche 911</h3>
-                    <p class="ui-li-desc">Carrera 4S 2009 Pdk</p>
-               	</a>
-            </li>
-            <li data-theme="a">
-            	<a href="estreno3.html" data-transition="slide">
-                	<img src="img/negro.jpg" height="120" width="110">
-                    <h3 class="ui-li-heading">Jeep Grand Cherokee</h3>
-                    <p class="ui-li-desc">2011</p>
-               	</a>
             </li>
         </ul>
     </div>
