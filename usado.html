@@ -10,20 +10,27 @@
 	<script>
 		$("#estreno").live("pageshow", function (event) 
 		{
-			//console.log( jQuery(event.target));
-			$('#estreno').attr('id','usado'+id_usado);
 			var url_usado = purl();
 			var id_usado = url_usado.param('id');
 			//alert(id_usado);
-			/*if(typeof(carga_usado[id_usado]) == "undefined")
+			//window["temp_" + id_usado] = 0;
+			//alert(window.indexOf("temp_"+id_usado));
+			/*if(window.indexOf("temp_"+id_usado)==-1)
+			{
+				window["temp_" + id_usado] = 0;
+			}*/
+			
+			alert('win'+window["temp_" + id_usado]);
+			
+			if(window["temp_" + id_usado] == undefined)
 			{
 				alert('cargo usado');
-				carga_usado[id_usado] = 1;
+				window["temp_" + id_usado] = id_usado;
 			}
 			else
 			{
 				alert('ya estaba cargado');
-			}*/
+			}
 			alert(id_usado);
 		});
 		$("#estreno").live("pagehide", function (event) 
