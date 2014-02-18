@@ -6,36 +6,37 @@
 </head>
 
 <body>
-<div data-role="page" id="estrenos" data-theme="a">
+<div data-role="page" id="usados" data-theme="a" data-dom-cache="true">
 <script type="text/javascript">
-		/*$( '#estrenos' ).live( 'pageinit',function(event){
-			  alert( 'ttThis page was just enhanced by jQuery Mobile!' );
-			  if(typeof window.yacargueusados == 'function')
-			  {
-				  alert('no cargo');
-			  }else
-			  {
-				  alert('cargo usados');
-				  var a = function yacargueusados()
-			  	  { return true;}
-			  }
-			});*/
-	$( '#estrenos' ).live( 'pagebeforecreate',function(event){
-		if(localStorage.getItem("carga_usados")=="no")
+		 $("#usados").live("pageshow", function () {
+		 if(typeof(carga_usados) == "undefined")
+		 {
+		 	$.mobile.showPageLoadingMsg();
+		 }
+		  
+	  });
+	  
+		$('#usados').live('pagecreate', function()
 		{
-			localStorage.setItem("carga_usados","si");
-			$(function() {
-				$.getJSON('http://www.autodrive.com.ar/usados/panel/productos/mobile_usados_json.php', function(data) {
+			$.ajax({
+				beforeSend: function() { $.mobile.showPageLoadingMsg(); }, //Show spinner
+				complete: function() { $.mobile.hidePageLoadingMsg() }, //Hide spinner
+				url: 'http://www.autodrive.com.ar/usados/panel/productos/mobile_usados_json.php',
+				dataType: 'json',
+				success: function(data) {
+					array_usados = data;
+					carga_usados = 1;
+					//alert('leo de getJson');
 					var $lu = $('#listadousados');
-					for(var i=0;i<data.length;i++)
+					$lu.html('<li data-role="list-divider" role="heading" data-theme="b">Usados Exclusivos</li>');
+					for(var i=0;i<array_usados.length;i++)
 					{
-						$lu.append('<li data-theme="a"><a href="usado.html?id='+data[i].id+'" data-transition="slide"><img src="'+data[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+data[i].titulo_corto+'</h3><p class="ui-li-desc">'+data[i].subtitulo+'</p></a></li>');
+						$lu.append('<li data-theme="a"><a href="usado.html?id='+array_usados[i].id+'" data-transition="slide"><img src="'+array_usados[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+array_usados[i].titulo_corto+'</h3><p class="ui-li-desc">'+array_usados[i].subtitulo+'</p></a></li>');
 					}
 					 $('#listadousados').listview('refresh');
-				});
+				}
 			});
-		}
-	});
+		});
 </script>
   <div data-theme="a" data-role="header" id="ventanitausados">
         <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a">INICIO</a>
@@ -45,9 +46,6 @@
     </div>
   	<div data-role="content">
         <ul data-role="listview" data-inset="true" data-split-theme="a" id="listadousados" data-filter="true" data-filter-placeholder="¿Qué usado buscas?">
-            <li data-role="list-divider" role="heading" data-theme="b">
-                Usados Exclusivos
-            </li>
         </ul>
     </div>
 </div>

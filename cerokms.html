@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Usados</title>
+</head>
+
+<body>
+<div data-role="page" id="cerokms" data-theme="a" data-dom-cache="true">
+<script type="text/javascript">
+		 $("#cerokms").live("pageshow", function () {
+		 if(typeof(carga_cerokms) == "undefined")
+		 {
+		 	$.mobile.showPageLoadingMsg();
+		 }
+		  
+	  });
+	  
+		$('#cerokms').live('pagecreate', function()
+		{
+			$.ajax({
+				beforeSend: function() { $.mobile.showPageLoadingMsg(); }, //Show spinner
+				complete: function() { $.mobile.hidePageLoadingMsg() }, //Hide spinner
+				url: 'http://www.autodrive.com.ar/usados/panel/cerokms/mobile_cerokms_json.php',
+				dataType: 'json',
+				success: function(data) {
+					array_cerokms = data;
+					carga_cerokms = 1;
+					//alert('leo de getJson');
+					var $lu = $('#listadocerokms');
+					$lu.html('<li data-role="list-divider" role="heading" data-theme="b">0 KM</li>');
+					for(var i=0;i<array_cerokms.length;i++)
+					{
+						$lu.append('<li data-theme="a"><a href="usado.html?id='+array_cerokms[i].id+'" data-transition="slide"><img src="'+array_cerokms[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+array_cerokms[i].titulo_corto+'</h3><p class="ui-li-desc">'+array_cerokms[i].subtitulo+'</p></a></li>');
+					}
+					 $('#listadocerokms').listview('refresh');
+				}
+			});
+		});
+</script>
+  <div data-theme="a" data-role="header" id="ventanitausados">
+        <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a">INICIO</a>
+        <h4>
+            <img src="img/logo-2.png" />
+        </h4>
+    </div>
+  	<div data-role="content">
+        <ul data-role="listview" data-inset="true" data-split-theme="a" id="listadocerokms" data-filter="true" data-filter-placeholder="¿Qué 0 KM buscas?">
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+
