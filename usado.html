@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Autodrive</title>
+</head>
+
+<body>
+<div data-role="page" id="estreno" data-theme="a" data-dom-cache="true">
+	<script>
+		$("#estreno").live("pageshow", function (event) 
+		{
+			//console.log( jQuery(event.target));
+			$('#estreno').attr('id','usado'+id_usado);
+			var url_usado = purl();
+			var id_usado = url_usado.param('id');
+			//alert(id_usado);
+			/*if(typeof(carga_usado[id_usado]) == "undefined")
+			{
+				alert('cargo usado');
+				carga_usado[id_usado] = 1;
+			}
+			else
+			{
+				alert('ya estaba cargado');
+			}*/
+			alert(id_usado);
+		});
+		$("#estreno").live("pagehide", function (event) 
+		{
+			var page = jQuery(event.target);
+    		page.remove(); 
+		});
+	</script>
+  <div data-theme="a" data-role="header" id="ventanita">
+        <a href="usados.html" data-transition="slide" data-direction="reverse" data-icon="arrow-l" data-theme="a">Volver</a>
+        <h4>
+            <img src="img/logo-2.png" />
+        </h4>
+    </div>
+  	<div data-role="content">
+        <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+        	<div align="center">
+            	<img src="img/blanco.jpg" width="100%" />
+        	</div>
+        </div>
+        <div data-controltype="textblock">
+            <p>
+                Motor V100 525hp  ( Origen Lamborghini )
+            </p>
+            <p>
+                Caja R-Tronic
+            </p>
+            <p>
+                Traccion Integral Quattro
+            </p>
+            <p>
+				Escapes Deportivos
+            </p>
+        </div>
+        <a data-role="button" href="contacto.html" data-theme="b" data-transition="slide" data-direction="reverse">
+            Consultar
+        </a>
+    </div>
+</div>
+</body>
+</html>
+

@@ -31,7 +31,7 @@
 					$lu.html('<li data-role="list-divider" role="heading" data-theme="b">Usados Exclusivos</li>');
 					for(var i=0;i<array_usados.length;i++)
 					{
-						$lu.append('<li data-theme="a"><a href="usado.html?id='+array_usados[i].id+'" data-transition="slide"><img src="'+array_usados[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+array_usados[i].titulo_corto+'</h3><p class="ui-li-desc">'+array_usados[i].subtitulo+'</p></a></li>');
+						$lu.append('<li data-theme="a"><a href="usado.html?id='+array_usados[i].id_producto+'" data-transition="slide"><img src="'+array_usados[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+array_usados[i].titulo_corto+'</h3><p class="ui-li-desc">'+array_usados[i].subtitulo+'</p></a></li>');
 					}
 					 $('#listadousados').listview('refresh');
 				}
