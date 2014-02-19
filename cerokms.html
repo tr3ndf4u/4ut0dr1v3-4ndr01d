@@ -31,14 +31,14 @@
 					$lu.html('<li data-role="list-divider" role="heading" data-theme="b">0 KM</li>');
 					for(var i=0;i<array_cerokms.length;i++)
 					{
-						$lu.append('<li data-theme="a"><a href="usado.html?id='+array_cerokms[i].id+'" data-transition="slide"><img src="'+array_cerokms[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+array_cerokms[i].titulo_corto+'</h3><p class="ui-li-desc">'+array_cerokms[i].subtitulo+'</p></a></li>');
+						$lu.append('<li data-theme="a"><a href="cerokm.html?id='+array_cerokms[i].id_cerokm+'" data-transition="slide"><img src="'+array_cerokms[i].imagen+'" height="120" width="160"><h3 class="ui-li-heading">'+array_cerokms[i].titulo_corto+'</h3><p class="ui-li-desc">'+array_cerokms[i].subtitulo+'</p></a></li>');
 					}
 					 $('#listadocerokms').listview('refresh');
 				}
 			});
 		});
 </script>
-  <div data-theme="a" data-role="header" id="ventanitausados">
+  <div data-theme="a" data-role="header" id="ventanitacerokms">
         <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a">INICIO</a>
         <h4>
             <img src="img/logo-2.png" />
