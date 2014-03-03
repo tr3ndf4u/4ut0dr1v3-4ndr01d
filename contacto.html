@@ -14,25 +14,30 @@
             var id_contacto = url_contacto.param('id');
             var proc_contacto = url_contacto.param('proc');
             //alert('proc: '+proc_contacto+' , id: '+id_contacto);
-
+            var ya_envio = 0;
+            $("#btnProcesar").unbind();
             $("#btnProcesar").click(function (){
-                $.ajax({
-                  type: "POST",
-                  url: "http://www.autodrive.com.ar/usados/mobile_contacto.php",
-                  data: "nombreapellido=" + $('#nombreapellido').val() + "&telefono=" + $('#telefono').val() + "&mail=" + $('#mail').val() + "&consulta=" + $('#consulta').val() + "&id_contacto=" + id_contacto + "&proc_contacto=" + proc_contacto,
-                  //dataType: "script",
-                  beforeSend: function(objeto){
-                    //$("#invitaciones").html("Mensaje: Cargando...");
-                  },
-                  success: function(msg){
-                    //$("#invitaciones").animate({width:400, height:400}, "slow");
-                    //$("#invitaciones").html(msg);
-                    //alert('enviado: '+msg);
-                    $('.'+msg).show();
-                    $('#formcontacto').hide();
-                  }
-            
-                });
+                if(ya_envio== 0)
+                {
+                    $.ajax({
+                      type: "POST",
+                      url: "http://www.autodrive.com.ar/usados/mobile_contacto.php",
+                      data: "nombreapellido=" + $('#nombreapellido').val() + "&telefono=" + $('#telefono').val() + "&email=" + $('#email').val() + "&consulta=" + $('#consulta').val() + "&id_contacto=" + id_contacto + "&proc_contacto=" + proc_contacto,
+                      //dataType: "script",
+                      beforeSend: function(objeto){
+                        //$("#invitaciones").html("Mensaje: Cargando...");
+                      },
+                      success: function(msg){
+                        //$("#invitaciones").animate({width:400, height:400}, "slow");
+                        //$("#invitaciones").html(msg);
+                        //alert('enviado: '+msg);
+                        $('.'+msg).show();
+                        $('#formcontacto').hide();
+                      }
+                    
+                    });
+                    ya_envio = 1;
+                }
             });
         });
     </script>
