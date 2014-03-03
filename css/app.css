@@ -11,7 +11,7 @@
 #mimenu{ padding-top: 10px;}
 .divbotones{ width: 50%; min-height:80px; margin:0px; float: left;margin-bottom: 10px; text-align: center;}
 .divbotones a{ text-decoration: none; color: #fff !important; font-size: 14px; text-shadow:none;}
-.divboton{border:#c00 solid 2px; border-radius: 6px; width: 80%; min-height: 66px; margin:0 auto; background:-webkit-gradient(radial, 174 76, 20, 244 -33, 608, from(#cc0000), to(#ffaaaa)); opacity: 0.8; }
+.divboton{border:#c00 solid 2px; border-radius: 6px; width: 80%; min-height: 66px; margin:0 auto; background:-webkit-gradient(radial, 174 76, 20, 244 -33, 608, from(#cc0000), to(#ffffff)); opacity: 0.8; }
 .mialerta3{ background:url(../img/alerta3.png) top center no-repeat;}
 
 .ui-field-contain{ padding: 0px !important; border-bottom-width:0px !important;}
