@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Autodrive</title>
+</head>
+
+<body>
+<div data-role="page" id="estreno3" data-theme="a" data-dom-cache="true">
+	<script>
+		$("#estreno3").live("pageshow", function (event) 
+		{
+			var url_oportunidad = purl();
+			var id_oportunidad = url_oportunidad.param('id');
+			
+			if(window["temp_" + id_oportunidad] == undefined)
+			{
+				
+				$.mobile.showPageLoadingMsg();
+				//window["temp_" + id_usado] = id_usado;
+				$.ajax({
+					beforeSend: function() { $.mobile.showPageLoadingMsg(); },
+					complete: function() { $.mobile.hidePageLoadingMsg() }, 
+					url: 'http://www.autodrive.com.ar/usados/panel/oportunidades/mobile_oportunidad_json.php?id='+id_oportunidad,
+					dataType: 'json',
+					success: function(data) 
+					{
+						$.mobile.hidePageLoadingMsg();	
+						html_oportunidad ='<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"><div align="center"><div id="mySwipe" style="max-width:500px;margin:0 auto" class="swipe"><div class="swipe-wrap">';
+						
+						for(var i=0;i<data.imagenes.length;i++)
+						{
+							html_oportunidad = html_oportunidad.concat('<div><img src="'+data.imagenes[i].imagen_tam+'" /></div>');
+						}
+						//html_usado.concat(galeria);
+						
+						html_oportunidad = html_oportunidad.concat('</div></div></div></div><div data-controltype="textblock"><h1>'+data.titulo+'</h1>'+data.sumario+'</div><a data-role="button" href="tel:+541145021111" data-theme="b" data-transition="slide" data-direction="reverse">Llamar</a><a id="bconsulta" data-role="button" href="contacto.html?proc=oportunidad&id='+data.id_oportunidad+'" data-theme="b" data-transition="slide" data-direction="reverse">Consulta Online</a>');
+						
+						$('#oportunidadcontent').html(html_oportunidad);
+						
+						$('[data-role="button"]').button();
+						
+						var elem = document.getElementById('mySwipe');
+						window.mySwipe = Swipe(elem, {
+						  // startSlide: 4,
+						  auto: 10000,
+						  continuous: true,
+						  disableScroll: false,
+						  stopPropagation: true
+						  // callback: function(index, element) {},
+						  // transitionEnd: function(index, element) {}
+						});
+
+					}
+				});
+			}
+			else
+			{
+				alert('ya estaba cargado');
+			}
+			//alert(id_usado);
+		});
+		$("#estreno3").live("pagehide", function (event) 
+		{
+			var page = jQuery(event.target);
+    		page.remove(); 
+		});
+	</script>
+  <div data-theme="a" data-role="header" id="ventanita">
+        <a href="oportunidades.html" data-transition="slide" data-direction="reverse" data-icon="arrow-l" data-theme="a">Volver</a>
+        <h4>
+            <img src="img/logo-2.png" />
+        </h4>
+    </div>
+  	<div data-role="content" id="oportunidadcontent"></div> 
+</div>
+</body>
+</html>
+

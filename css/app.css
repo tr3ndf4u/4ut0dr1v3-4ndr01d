@@ -8,6 +8,16 @@
 .mitelefono{ background:url(../img/telefono2.png) top center no-repeat;}
 .mimaps{ background:url(../img/maps2.png) top center no-repeat;}
 .mialerta{ background:url(../img/alerta2.png) top center no-repeat;}
+#mimenu{ padding-top: 10px;}
+.divbotones{ width: 50%; min-height:80px; margin:0px; float: left;margin-bottom: 10px; text-align: center;}
+.divbotones a{ text-decoration: none; color: #fff !important; font-size: 14px; text-shadow:none;}
+.divboton{border:#c00 solid 2px; border-radius: 6px; width: 80%; min-height: 66px; margin:0 auto; background:-webkit-gradient(radial, 174 76, 20, 244 -33, 608, from(#cc0000), to(#ffaaaa)); opacity: 0.8; }
+.mialerta3{ background:url(../img/alerta3.png) top center no-repeat;}
+
+.ui-field-contain{ padding: 0px !important; border-bottom-width:0px !important;}
+
+.ok{ width: 100%; padding: 4px; color: #0a0; opacity: 0.8; display: none;}
+.ko{ width: 100%; padding: 4px; color: #a00; opacity: 0.8; display: none;}
 /* Swipe 2 required styles */
 	
 .swipe {

@@ -2,12 +2,41 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Autodrive</title>
+<title>Contacto</title>
 </head>
 
 <body>
-<div data-theme="a" data-role="page" id="contacto">
-  <div data-theme="a" data-role="header" id="ventanita">
+<div data-role="page" id="contactoo" data-theme="a" data-dom-cache="false">
+    <script>
+        $("#contactoo").live("pageshow", function (event) 
+        {
+            var url_contacto = purl();
+            var id_contacto = url_contacto.param('id');
+            var proc_contacto = url_contacto.param('proc');
+            //alert('proc: '+proc_contacto+' , id: '+id_contacto);
+
+            $("#btnProcesar").click(function (){
+                $.ajax({
+                  type: "POST",
+                  url: "http://www.autodrive.com.ar/usados/mobile_contacto.php",
+                  data: "nombreapellido=" + $('#nombreapellido').val() + "&telefono=" + $('#telefono').val() + "&mail=" + $('#mail').val() + "&consulta=" + $('#consulta').val() + "&id_contacto=" + id_contacto + "&proc_contacto=" + proc_contacto,
+                  //dataType: "script",
+                  beforeSend: function(objeto){
+                    //$("#invitaciones").html("Mensaje: Cargando...");
+                  },
+                  success: function(msg){
+                    //$("#invitaciones").animate({width:400, height:400}, "slow");
+                    //$("#invitaciones").html(msg);
+                    //alert('enviado: '+msg);
+                    $('.'+msg).show();
+                    $('#formcontacto').hide();
+                  }
+            
+                });
+            });
+        });
+    </script>
+    <div data-theme="a" data-role="header" id="ventanita">
         <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a" data-dom-cache="true">INICIO</a>
         <h4>
             <img src="img/logo-2.png" />
@@ -20,54 +49,44 @@
                 Por favor, completar el formulario que a la brevedad le responderemos. 
                 <br>
                 <br>
+                <div class="ok">Mensaje Enviado!</div>
+                <div class="ko">Error!</div>
             </b>
         </div>
-         <form action="http://www.trendtech.com.ar" method="POST">
+         <form name="formcontacto" id="formcontacto" method="POST">
             <div data-role="fieldcontain">
                 <fieldset data-role="controlgroup" data-mini="true">
-                    <label for="textinput1">
-                        Nombre
+                    <label for="nombreapellido">
+                        Nombre y Apellido
                     </label>
-                    <input name="nombre" id="textinput1" placeholder="" value="tu nombre"
-                    type="text" data-theme="c">
+                    <input name="nombreapellido" id="nombreapellido" placeholder="" value="" type="text" data-theme="c" />
                 </fieldset>
             </div>
             <div data-role="fieldcontain">
                 <fieldset data-role="controlgroup" data-mini="true">
-                    <label for="textinput2">
-                        Apellido
-                    </label>
-                    <input name="apellido" id="textinput2" placeholder="" value="tu apellido"
-                    type="text" data-theme="c">
-                </fieldset>
-            </div>
-            <div data-role="fieldcontain">
-                <fieldset data-role="controlgroup" data-mini="true">
-                    <label for="textinput3">
+                    <label for="telefono">
                         Teléfono
                     </label>
-                    <input name="telefono" id="textinput3" placeholder="" value="tu telefono"
-                    type="tel" data-theme="c">
+                    <input name="telefono" id="telefono" placeholder="" value="" type="tel" data-theme="c" />
                 </fieldset>
             </div>
             <div data-role="fieldcontain">
                 <fieldset data-role="controlgroup" data-mini="true">
-                    <label for="textinput4">
+                    <label for="email">
                         Email
                     </label>
-                    <input name="email" id="textinput4" placeholder="" value="tu email" type="email" data-theme="c">
+                    <input name="email" id="email" placeholder="" value="" type="email" data-theme="c" />
                 </fieldset>
             </div>
             <div data-role="fieldcontain">
                 <fieldset data-role="controlgroup">
-                    <label for="textarea1">
+                    <label for="consulta">
                         Consulta
                     </label>
-                    <textarea name="consulta" id="textarea1" placeholder="" data-mini="true" data-theme="c">tu consulta...</textarea>
+                    <textarea name="consulta" id="consulta" placeholder="" data-mini="true" data-theme="c"></textarea>
                 </fieldset>
             </div>
-            <input type="submit" data-theme="b" data-iconpos="right"
-            value="Enviar" data-mini="true">
+            <input type="button" data-theme="b" data-iconpos="right" value="Enviar" data-mini="true" name="btnProcesar" id="btnProcesar" />
         </form>
         
     </div>
