@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contacto</title>
+</head>
+
+<body>
+<div data-role="page" id="contactorepuesto" data-theme="a" data-dom-cache="false">
+    <script>
+        $("#contactorepuesto").live("pageshow", function (event) 
+        {
+            var ya_envio = 0;
+            $("#btnProcesarRepuesto").unbind();
+            $("#btnProcesarRepuesto").click(function (){
+                if(ya_envio== 0)
+                {
+                    $.ajax({
+                      type: "POST",
+                      url: "http://www.autodrive.com.ar/usados/mobile_contacto.php",
+                      data: "nombreapellido=" + $('#nombreapellido').val() + "&telefono=" + $('#telefono').val() + "&email=" + $('#email').val() + "&consulta=" + $('#consulta').val() + "&marcamodelo=" + $('#marcamodelo').val() + "&chasis=" + $('#chasis').val() + "&proc_contacto=repuesto",
+                      beforeSend: function(objeto){
+                        //$("#invitaciones").html("Mensaje: Cargando...");
+                      },
+                      success: function(msg){
+                        $('.'+msg).show();
+                        $('#formcontactorepuesto').hide();
+                      }
+                    
+                    });
+                    ya_envio = 1;
+                }
+            });
+        });
+    </script>
+    <div data-theme="a" data-role="header" id="ventanita">
+        <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a" data-dom-cache="true">INICIO</a>
+        <h4>
+            <img src="img/logo-2.png" />
+        </h4>
+    </div>
+  	<div data-role="content">
+        <div style=" text-align:center">
+            <b>
+                <br>
+                Por favor, completar el formulario que a la brevedad le responderemos. 
+                <br>
+                <br>
+                <div class="ok">Mensaje Enviado!</div>
+                <div class="ko">Error!</div>
+            </b>
+        </div>
+         <form name="formcontactorepuesto" id="formcontactorepuesto" method="POST">
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="nombreapellido">
+                        Nombre y Apellido
+                    </label>
+                    <input name="nombreapellido" id="nombreapellido" placeholder="" value="" type="text" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="telefono">
+                        Teléfono
+                    </label>
+                    <input name="telefono" id="telefono" placeholder="" value="" type="tel" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="email">
+                        Email
+                    </label>
+                    <input name="email" id="email" placeholder="" value="" type="email" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="marcamodelo">
+                        Marca y Modelo
+                    </label>
+                    <input name="marcamodelo" id="marcamodelo" placeholder="" value="" type="text" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="chasis">
+                        Número de chasis
+                    </label>
+                    <input name="chasis" id="chasis" placeholder="" value="" type="tel" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <label for="consulta">
+                        Repuesto a solicitar
+                    </label>
+                    <textarea name="consulta" id="consulta" placeholder="" data-mini="true" data-theme="c"></textarea>
+                </fieldset>
+            </div>
+            <input type="button" data-theme="b" data-iconpos="right" value="Enviar" data-mini="true" name="btnProcesarRepuesto" id="btnProcesarRepuesto" />
+        </form>
+        
+    </div>
+</div>
+</body>
+</html>

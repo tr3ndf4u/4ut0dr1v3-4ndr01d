@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contacto</title>
+</head>
+
+<body>
+<div data-role="page" id="contactoservicio" data-theme="a" data-dom-cache="false">
+    <script>
+        $("#contactoservicio").live("pageshow", function (event) 
+        {
+            var ya_envio = 0;
+            $("#btnProcesarServicio").unbind();
+            $("#btnProcesarServicio").click(function (){
+                if(ya_envio== 0)
+                {
+                    $.ajax({
+                      type: "POST",
+                      url: "http://www.autodrive.com.ar/usados/mobile_contacto.php",
+                      data: "nombreapellido=" + $('#nombreapellido').val() + "&telefono=" + $('#telefono').val() + "&email=" + $('#email').val() + "&consulta=" + $('#consulta').val() + "&marcamodelo=" + $('#marcamodelo').val() + "&fechadeseada=" + $('#fechadeseada').val() + "&kilometraje=" + $('#kilometraje').val() + "&anio=" + $('#anio').val() + "&proc_contacto=servicio",
+                      beforeSend: function(objeto){
+                        //$("#invitaciones").html("Mensaje: Cargando...");
+                      },
+                      success: function(msg){
+                        $('.'+msg).show();
+                        $('#formcontactoservicio').hide();
+                      }
+                    
+                    });
+                    ya_envio = 1;
+                }
+            });
+        });
+    </script>
+    <div data-theme="a" data-role="header" id="ventanita">
+        <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="home" data-theme="a" data-dom-cache="true">INICIO</a>
+        <h4>
+            <img src="img/logo-2.png" />
+        </h4>
+    </div>
+  	<div data-role="content">
+        <div style=" text-align:center">
+            <b>
+                <br>
+                Por favor, completar el formulario que a la brevedad le responderemos. 
+                <br>
+                <br>
+                <div class="ok">Mensaje Enviado!</div>
+                <div class="ko">Error!</div>
+            </b>
+        </div>
+         <form name="formcontactoservicio" id="formcontactoservicio" method="POST">
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="nombreapellido">
+                        Nombre y Apellido
+                    </label>
+                    <input name="nombreapellido" id="nombreapellido" placeholder="" value="" type="text" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="telefono">
+                        Teléfono
+                    </label>
+                    <input name="telefono" id="telefono" placeholder="" value="" type="tel" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="email">
+                        Email
+                    </label>
+                    <input name="email" id="email" placeholder="" value="" type="email" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="marcamodelo">
+                        Marca y Modelo
+                    </label>
+                    <input name="marcamodelo" id="marcamodelo" placeholder="" value="" type="text" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="kilometraje">
+                        Kilometraje
+                    </label>
+                    <input name="kilometraje" id="kilometraje" placeholder="" value="" type="tel" data-theme="c" />
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="anio">
+                    Elegir año:
+                </label>
+                <select id="anio" name="anio">
+                    <option value="2008">
+                        2008
+                    </option>
+                    <option value="2009">
+                        2009
+                    </option>
+                    <option value="2010">
+                        2010
+                    </option>
+                    <option value="2011">
+                        2011
+                    </option>
+                    <option value="2012">
+                        2012
+                    </option>
+                    <option value="2013">
+                        2013
+                    </option>
+                    <option value="2014">
+                        2014
+                    </option>
+                </select>
+            </div>
+            <div data-role="fieldcontain" data-controltype="dateinput">
+                <label for="fechadeseada">
+                    Fecha deseada
+                </label>
+                <input name="fechadeseada" id="fechadeseada" placeholder="" value="" type="date"
+                data-mini="false">
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <label for="consulta">
+                        Observaciones
+                    </label>
+                    <textarea name="consulta" id="consulta" placeholder="" data-mini="true" data-theme="c"></textarea>
+                </fieldset>
+            </div>
+            <input type="button" data-theme="b" data-iconpos="right" value="Enviar" data-mini="true" name="btnProcesarServicio" id="btnProcesarServicio" />
+        </form>
+        
+    </div>
+</div>
+</body>
+</html>
