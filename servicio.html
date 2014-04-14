@@ -14,7 +14,32 @@
         </h4>
     </div>
   	<div data-role="content" id="serviciocontent">
-  		<p>Los Servicios se realizan cada 12000 km o cada 6 meses.</p>
+  		<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+        <div align="center">
+          <div id="mySwipe" style="max-width:500px;margin:0 auto" class="swipe">
+            <div class="swipe-wrap">
+              <div><img src="http://www.autodrive.com.ar/usados/app/servicio_tecnico_1.jpg" /></div>
+              <div><img src="http://www.autodrive.com.ar/usados/app/servicio_tecnico_2.jpg" /></div>
+              <div><img src="http://www.autodrive.com.ar/usados/app/servicio_tecnico_3.jpg" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+          var elem = document.getElementById('mySwipe');
+          window.mySwipe = Swipe(elem, {
+            // startSlide: 4,
+            auto: 10000,
+            continuous: true,
+            disableScroll: false,
+            stopPropagation: true
+            // callback: function(index, element) {},
+            // transitionEnd: function(index, element) {}
+          });
+
+      </script>
+      <p>Contamos con una infraestructura dimensionada a la medida de tus necesidades. Podes encontrar, asesoramiento idóneo, atención personalizada y las mejores condiciones comerciales para realizar cualquier tipo de reparación que tu vehículo necesite. Reserva tu turno de manera online.
+</p>
   		<a data-role="button" href="tel:+541145021111" data-theme="b" data-transition="slide" data-direction="reverse">Llamar</a>
   		<a id="bconsulta" data-role="button" href="contacto_servicio.html" data-theme="b" data-transition="slide" data-direction="reverse">Consulta Online</a>
   	</div> 
