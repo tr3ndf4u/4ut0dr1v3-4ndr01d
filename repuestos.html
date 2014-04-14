@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div data-role="page" id="repuestos" data-theme="a" data-dom-cache="true">
+<div data-role="page" id="repuestos" data-theme="a" data-dom-cache="false">
   <div data-theme="a" data-role="header" id="ventanita">
         <a href="index.html" data-transition="slide" data-direction="reverse" data-icon="arrow-l" data-theme="a">Volver</a>
         <h4>
@@ -25,6 +25,19 @@
           </div>
         </div>
       </div>
+      <script type="text/javascript">
+          var elem = document.getElementById('mySwipe');
+          window.mySwipe = Swipe(elem, {
+            // startSlide: 4,
+            auto: 10000,
+            continuous: true,
+            disableScroll: false,
+            stopPropagation: true
+            // callback: function(index, element) {},
+            // transitionEnd: function(index, element) {}
+          });
+
+      </script>
       <p>Con un amplio Stock de repuestos y delivery a todo el país en 24 hs., estamos en condiciones de responder rápidamente a tus necesidades cualquiera sea el año de fabricación de tu vehículo.
 Disponibles todos los medios de pago.</p>
   		<a data-role="button" href="tel:+541145021111" data-theme="b" data-transition="slide" data-direction="reverse">Llamar</a>
