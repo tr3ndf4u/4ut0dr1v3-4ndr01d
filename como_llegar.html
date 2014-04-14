@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div data-role="page" id="comollegar" data-theme="a" data-dom-cache="true">
+<div data-role="page" id="comollegar" data-theme="a" data-dom-cache="false">
 	<style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
@@ -56,12 +56,14 @@
 			position: cine,
 			map:map	
 		});
+		calcRoute();
   	}
   
   	setTimeout("initialize()",4000);
   
   	function calcRoute()
 	{
+   		//alert('calc route');
    		var start = new google.maps.LatLng(-26.838893,-65.226056);
         var end = new google.maps.LatLng(-34.603259,-58.507776);
         var request = {
@@ -82,6 +84,7 @@
   		
   	function mostrarUbicacion()
   	{
+  		//alert('mostrar ubicacion');
 		//navigator.geolocation.getCurrentPosition( lecturaGPS , errorGPS , {enableHighAccuracy:true} )  
 		navigator.geolocation.getCurrentPosition( setearGPS , errorGPS , {enableHighAccuracy:true} );
   	}
@@ -121,10 +124,11 @@
   
   	function errorGPS()
 	{
-		alert(" no puedo encontrarte :(");
+		//alert(" no puedo encontrarte :(");
   	}
   
   	mostrarUbicacion();
+  	//alert('demo');
 
 </script>
   <div data-theme="a" data-role="header" id="ventanita">
