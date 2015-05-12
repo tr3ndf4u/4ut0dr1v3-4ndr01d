@@ -42,7 +42,7 @@
 		
 		//..........
 		directionsDisplay = new google.maps.DirectionsRenderer();
-        var cine = new google.maps.LatLng(-34.603259,-58.507776);
+		var cine = new google.maps.LatLng(-34.603259,-58.507776);
         var mapOptions = {
           zoom:15,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -56,13 +56,23 @@
 			position: cine,
 			map:map	
 		});
-		calcRoute();
+		//calcRoute();
+		mostrarUbicacion();
   	}
   
   	setTimeout("initialize()",4000);
   
   	function calcRoute()
 	{
+
+		if (navigator.geolocation) {
+		   // Obtener la posición actual del usuario
+		   alert('si puedo saber');
+		   navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
+		} else {
+		   alert('Geolocalización no soportada por tu navegador');
+		}
+
    		//alert('calc route');
    		var start = new google.maps.LatLng(-26.838893,-65.226056);
         var end = new google.maps.LatLng(-34.603259,-58.507776);
@@ -103,8 +113,7 @@
 	  
 	  miubicacion2 = new google.maps.LatLng(ubicacion.coords.latitude, ubicacion.coords.longitude);
 	 
-	 	//++++++
-		var start = miubicacion2;
+	 	var start = new google.maps.LatLng(miubicacion2.A,miubicacion2.F);
 		var end = new google.maps.LatLng(-34.603259,-58.507776);
 		var request = {
 			origin:start,
@@ -127,7 +136,7 @@
 		//alert(" no puedo encontrarte :(");
   	}
   
-  	mostrarUbicacion();
+  	//mostrarUbicacion();
   	//alert('demo');
 
 </script>
